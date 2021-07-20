@@ -1,34 +1,42 @@
-import React, {Component} from 'react';
-//import ReactDOM from 'react-dom';
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
 
-export default class UserList extends Component {
-    state = {
-        data: []
-    }
+export default function UserList(){
 
-    async componentDidMount() {
-        const api = 'https://www.mocky.io/v2/5d531c4f2e0000620081ddce';
-
-        const response = await fetch(api);
-        console.log(response)
-        
-        const body = await response.json();
-        console.log(body);
-
-        this.setState({data: body});
-
-    }
+    // Consumo da API para listar usuários
+    const [usuario, setUsuario] = useState([]);
     
-    render(){
-        return (
-            <div className="boxUser">
-                <img alt="icon" href="#"></img>
-                <div className="divText">
-                    <p>Usuário</p>
-                    <p>{JSON.stringify(this.state.data)}</p>
+    useEffect(() => {
+        axios.get(`https://www.mocky.io/v2/5d531c4f2e0000620081ddce`)
+        .then(res => {
+            const person = res.data;
+            setUsuario(person);
+        })
+    },[])
+    
+    return(
+        <>
+            {/* Listagem de usuários */}
+            {usuario.map((item) =>
+                <div className="boxUser" >
+                    <div>
+                        <img src={item.img} alt="Imagem usuário"/>
+                    </div>
+                    <div className="divText">
+                        <div>
+                            Nome: {item.name}
+                        </div>
+                        <div>
+                            ID: {item.id} - Username: {item.username}
+                        </div>
+                    </div>
+                    <div>
+                        <button>Pagar</button>
+                    </div>
                 </div>
-                <button>Pagar</button>
-            </div>
-        )
-    }
+            )}
+            
+            
+        </>
+    )
 }

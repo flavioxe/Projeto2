@@ -8,7 +8,7 @@ export default function UserList(){
     const [showModal, setShowModal] = useState(false);
     // Primeiro vem a variável criada dentro da state e depois a função usada pra jogar os valores para a variável
     
-    useEffect(() => {
+    useEffect(() => { /*Evita loop, carrega apenas uma vez*/
         axios.get(`https://www.mocky.io/v2/5d531c4f2e0000620081ddce`)
         .then(res => {
             const user = res.data;
@@ -27,7 +27,7 @@ export default function UserList(){
             {usuario.map((item) =>
                 <div className="boxUser" >
                     <div>
-                        <img src={item.img} alt="Imagem usuário"/>
+                        <img src={item.img} alt="Imagem dousuário"/>
                     </div>
                     <div className="divText">
                         <div>
@@ -42,11 +42,23 @@ export default function UserList(){
                     </div>
                 </div>
             )}
-                <div className="backdrop" onClick={() => setShowModal(false)} style={{display: (showModal ? 'block' : 'none')}}>
-                <div className="modal" style={{display: (showModal ? 'block' : 'none')}}>
-                </div>
-
+            <div className="backdrop" onClick={() => setShowModal(false)} style={{display: (showModal ? 'block' : 'none')}}>
+            </div>
+            <div className="modal" style={{display: (showModal ? 'block' : 'none')}}>
+                    <div className="headerDropdown">
+                       Pagamento para <span>Nome</span>
+                    </div>
+                    <div className="bodyDropdown">
+                        <input className="inputDropdown" type="text" placeholder="R$ 0,00"></input>
+                        <select className="selectDropdown">
+                            <option>Cartão com final 1111</option>
+                            <option>Cartão com fianl 1234</option>
+                        </select>
+                        <button className="buttonDropdown">Pagar</button>
+                    </div>
             </div>
         </> /* tag de separação */
     )
 }
+
+// https://www.digitalocean.com/community/tutorials/react-axios-react-pt - POST

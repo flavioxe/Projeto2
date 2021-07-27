@@ -8,6 +8,7 @@ body {
   background-color: rgb(123, 125, 168);
 }
 
+/* Lista dos usuários da página principal */
 .boxUser {
   display: flex;
   justify-content: space-between;
@@ -18,6 +19,7 @@ body {
   background: linear-gradient(180deg, rgba(57,58,94,1) 0%, rgba(40,42,63,1) 100%);
 }
 
+/* Icon do user */
 img {
   margin: 0 10px 0 30px;
   height: 95px;
@@ -25,6 +27,7 @@ img {
 
 }
 
+/* Infomrações do user */
 .divText {
   color: white;
   font-weight: bold;
@@ -32,12 +35,14 @@ img {
 
 }
 
+/* Botão Pagar */
 button {
   height: 20px;
   margin-right: 30px;
   width: 60px;
 }
 
+/* Modal de pagamento para o usuário selecionado */
 .modal {
   border: 1px solid rgba(57,58,94,1);
   background-color: white;
@@ -58,7 +63,8 @@ button {
   left: 0;
 }
 
-.headerDropdown {
+/* Parte superior do modal */
+.headerModal {
   display: block;
   padding: 5vh 0 5vh 15px;
   color: white;
@@ -66,11 +72,13 @@ button {
   background-color:  rgba(57,58,94,1);
 }
 
+/* Nome do usuário selecionado */
 span {
   color: #CDDB3A;
 }
 
-.bodyDropdown {
+/* Corpo do modal */
+.bodyModal {
   height: 30vh;
   background-color: white;
   display: flex;
@@ -79,20 +87,62 @@ span {
   align-items: center;
 }
 
-.inputDropdown {
+.inputModal {
   margin: 20px 0 20px 0;
   height: 25px;
   width: 80%;
 }
 
-.selectDropdown {
+.selectModal {
   margin-bottom: 20px;
   font-weight: bold;
   height: 25px;
   width: 70%;
 }
 
-.buttonDropdown {
+.buttonModal {
   font-weight: bold;
   margin: 0 0 20px 0;
+}
+
+/* Modal de mensagem de sucesso do pagamento */
+.modalSucess {
+  display: none;
+  border: 1px solid rgba(57,58,94,1);
+  background-color: white;
+  width: 30vw;
+  height: 10vh;
+  position: fixed;
+  left: 35vw;
+  top: 25vh;
+}
+
+/* Corpo do modal de mensagem de sucesso */
+.bodyModalPayment {
+  height: 10vh;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal de mensagem de erro do pagamento */
+.modalError {
+  display: none;
+  border: 1px solid rgba(57,58,94,1);
+  background-color: white;
+  width: 30vw;
+  height: 10vh;
+  position: fixed;
+  left: 35vw;
+  top: 25vh;
+}
+
+/* Span da palavra 'não' da mensagem de erro  */
+.spanError {
+  display: inline;
+  font-weight: bold;
+  color: black;
+  padding: 0 5px 0;
 }

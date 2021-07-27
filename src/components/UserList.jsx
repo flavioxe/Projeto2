@@ -45,17 +45,25 @@ export default function UserList(){
             <div className="backdrop" onClick={() => setShowModal(false)} style={{display: (showModal ? 'block' : 'none')}}>
             </div>
             <div className="modal" style={{display: (showModal ? 'block' : 'none')}}>
-                    <div className="headerDropdown">
+                    <div className="headerModal">
                        Pagamento para <span>Nome</span>
                     </div>
-                    <div className="bodyDropdown">
-                        <input className="inputDropdown" type="text" placeholder="R$ 0,00"></input>
-                        <select className="selectDropdown">
+                    <div className="bodyModal">
+                        <input className="inputModal" type="text" placeholder="R$ 0,00"></input>
+                        <select className="selectModal">
                             <option>Cartão com final 1111</option>
-                            <option>Cartão com fianl 1234</option>
+                            <option>Cartão com final 1234</option>
                         </select>
-                        <button className="buttonDropdown">Pagar</button>
+                        <button className="buttonModal">Pagar</button>
                     </div>
+            <div className="modalSucess">
+                <div className="headerModal"> Recibo de Pagamento </div>
+                <div className="bodyModalPayment"> O pagamento foi concluído com sucesso.</div>
+            </div>
+            <div className="modalError">
+                <div className="headerModal"> Recibo de Pagamento </div>
+                <div className="bodyModalPayment"> O pagamento <span className="spanError"> não </span> foi concluído com sucesso. </div>
+            </div>
             </div>
         </> /* tag de separação */
     )

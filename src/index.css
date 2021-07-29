@@ -74,6 +74,7 @@ button {
 
 /* Nome do usuário selecionado */
 span {
+  padding-left: 5px;
   color: #CDDB3A;
 }
 

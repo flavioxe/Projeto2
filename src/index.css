@@ -9,45 +9,57 @@ body {
 }
 
 /* Lista dos usuários da página principal */
-.boxUser {
+div.boxUser {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 3px auto;
-  width: 80%;
+  width: 60%;
   height: 20vh;
   background: linear-gradient(180deg, rgba(57,58,94,1) 0%, rgba(40,42,63,1) 100%);
+  border-radius: 5px;
 }
 
 /* Icon do user */
-img {
+img.iconUser {
   margin: 0 10px 0 30px;
   height: 95px;
   border-radius: 50%;
+  border: 1px solid white;
 
 }
 
 /* Infomrações do user */
-.divText {
+div.infoUser {
   color: white;
-  font-weight: bold;
-  width: 70%;
+  width: 60%;
 
 }
 
 /* Botão Pagar */
-button {
-  height: 20px;
+button.buttonUser {
+  height: 35px;
   margin-right: 30px;
-  width: 60px;
+  width: 70px;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 15px;
+  color: white;
+  cursor: pointer;
+  transition: background 1s;
 }
+
+.buttonUser:hover, .buttonUser:focus {
+  background: rgb(123, 125, 168);
+}
+
 
 /* Modal de pagamento para o usuário selecionado */
 .modal {
-  border: 1px solid rgba(57,58,94,1);
+  border-radius: 5px;
   background-color: white;
   width: 30vw;
-  height: 20vh;
+  height: 35vh;
   position: fixed;
   left: 35vw;
   top: 25vh;
@@ -65,85 +77,65 @@ button {
 
 /* Parte superior do modal */
 .headerModal {
-  display: block;
-  padding: 5vh 0 5vh 15px;
+  border-radius: 5px 5px 0 0;
+  background: rgba(40,42,63,1);
+  height: 25%;
+  display: flex;
+  align-items: center;
+}
+
+.titleModal {
+  margin-left: 5%;
   color: white;
-  font-weight: bold;
-  background-color:  rgba(57,58,94,1);
 }
 
 /* Nome do usuário selecionado */
-span {
+.userNameModal {
   padding-left: 5px;
   color: #CDDB3A;
 }
 
 /* Corpo do modal */
 .bodyModal {
-  height: 30vh;
-  background-color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
 .inputModal {
-  margin: 20px 0 20px 0;
+  margin-top: 5%;
+  padding-left: 2px;
   height: 25px;
   width: 80%;
+  border: 1px solid rgb(123, 125, 168);
+  border-radius: 15px;
 }
 
 .selectModal {
-  margin-bottom: 20px;
-  font-weight: bold;
-  height: 25px;
-  width: 70%;
+  margin-top: 5%;
+  width: 60%;
+  border: 1px solid rgb(123, 125, 168);
+  border-radius: 15px;
+}
+
+.buttonsDiv {
+  display: flex;
+  margin-top: 2%;
 }
 
 .buttonModal {
-  font-weight: bold;
-  margin: 0 0 20px 0;
+  color:white;
+  margin: 10px;
+  height: 30px;
+  width: 70px;
+  border-radius: 15px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background: rgba(40,42,63,1);
+  transition: background 0.5s;
 }
 
-/* Modal de mensagem de sucesso do pagamento */
-.modalSucess {
-  display: none;
-  border: 1px solid rgba(57,58,94,1);
-  background-color: white;
-  width: 30vw;
-  height: 10vh;
-  position: fixed;
-  left: 35vw;
-  top: 25vh;
+.buttonModal:hover {
+  background: rgb(123, 125, 168);
 }
 
-/* Corpo do modal de mensagem de sucesso */
-.bodyModalPayment {
-  height: 10vh;
-  background-color: white;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Modal de mensagem de erro do pagamento */
-.modalError {
-  display: none;
-  border: 1px solid rgba(57,58,94,1);
-  background-color: white;
-  width: 30vw;
-  height: 10vh;
-  position: fixed;
-  left: 35vw;
-  top: 25vh;
-}
-
-/* Span da palavra 'não' da mensagem de erro  */
-.spanError {
-  display: inline;
-  font-weight: bold;
-  color: black;
-  padding: 0 5px 0;
-}

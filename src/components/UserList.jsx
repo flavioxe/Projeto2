@@ -67,7 +67,7 @@ export default function UserList() {
         })
             .then(response => response.json())
             .then((data) => {
-                console.log(data)
+                // console.log(data)
                 setShowModal("none")
                 setmodalTransaction("block")
 
@@ -137,13 +137,9 @@ export default function UserList() {
                     <span className="closeModal" onClick={() => reset()}> X </span>
                 </div>
                 <div>
-                    <span className="bodyModalPayment"> {transaction}</span>
+                    <span className="bodyModalPayment"> {transaction} </span>
                 </div>
             </div>
         </> /* tag de separação */
     )
 }
-
-// https://www.digitalocean.com/community/tutorials/react-axios-react-pt - POST
-// https://www.npmjs.com/package/react-infinite-scroll-component - INFINTE SCROLL
-

@@ -33,7 +33,6 @@ img.iconUser {
 div.infoUser {
   color: white;
   width: 60%;
-
 }
 
 /* Botão Pagar */
@@ -139,3 +138,34 @@ button.buttonUser {
   background: rgb(123, 125, 168);
 }
 
+@media (max-width: 550px) {
+  
+  div.boxUser {
+    width: 90%;
+    height: 15vh;
+  }
+
+  /* Icon do user */
+img.iconUser {
+  height: 10vh;
+}
+
+/* Infomrações do user */
+div.infoUser {
+  font-size: 12px;
+}
+
+/* Botão Pagar */
+button.buttonUser {
+  height: 25px;
+  width: 55px;
+}
+
+/* Modal de pagamento para o usuário selecionado */
+.modal {
+  width: 60vw;
+  height: 200px;
+  left: 20vw;
+  top: 25vh;
+}
+}
